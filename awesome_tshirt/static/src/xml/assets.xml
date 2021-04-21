@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="awesome tshirt assets backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_dashboard.js" />
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/my_counter.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/chart_widget.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/img_preview.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/is_late_widget.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/warning_widget.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/customer_form_view.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/order_form_view.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/quick_order_navigation.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/home_menu.js"/>
+            <script type="text/javascript" src="/awesome_tshirt/static/src/js/order_kanban_view.js"/>
+        </xpath>
+    </template>
+
+</odoo>

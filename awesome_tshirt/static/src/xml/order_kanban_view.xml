@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+
+<!-- Sidebar containing the list later on -->
+<div t-name="OrderKanban.Sidebar" class="o_customer_sidebar">
+    <input type="input" class="o_customer_search" />
+    <t t-call="OrderKanban.CustomerList"/>
+</div>
+
+<!-- List of customers loaded on the left -->
+<table t-name="OrderKanban.CustomerList" class="table o_customer_list">
+    <tbody>
+        <t t-foreach="customers" t-as="customer">
+            <tr t-att-data-id="customer.id" t-attf-class="o_customer #{customer.id == activeCustomerId ? ' o_active' : ''}">
+                <td><t t-esc="customer.display_name"/></td>
+            </tr>
+        </t>
+        <!-- <p t-esc="customers"></p> -->
+    </tbody>
+</table>
+</templates>

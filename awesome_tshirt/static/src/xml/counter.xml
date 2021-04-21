@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+
+<div t-name="MyCounter">
+    <span class="val" t-esc="widget.value"></span>
+    <button class="btn btn-icon btn-primary o_increment">INCREMENT</button>
+</div>
+
+</templates>

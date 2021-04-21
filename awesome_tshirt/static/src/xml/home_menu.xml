@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="tempalte" xml:space="preserve">
+<t t-name="HomeMenu.Message">
+    <div class="alert-warning o_custom_message">
+        <t t-esc="message" />
+    </div>
+</t>
+
+</templates>

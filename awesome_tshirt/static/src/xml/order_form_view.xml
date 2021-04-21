@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderFormView.Buttons">
+        <button type="button" class="btn btn-primary o_print_label">Print Label</button>
+    </t>
+</templates>
