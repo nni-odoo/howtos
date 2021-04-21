@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pricing_view_tree" model="ir.ui.view">
+        <field name="name">library.pricing.tree</field>
+        <field name="model">library.pricing</field>
+        <field name="arch" type="xml">
+            <tree string="Pricing">
+                <field name="name" />
+                <field name="duration" attrs="{'invisible': [('price_type','=','one-off')]}" />
+                <field name="price" />
+                <field name="price_type" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Pricing Action -->
+    <record id="pricing_action" model="ir.actions.act_window">
+        <field name="name">Pricing</field>
+        <field name="res_model">library.pricing</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tree view -->
+    <record id="partner_view_tree" model="ir.ui.view">
+        <field name="name">library.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="email" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="partner_view_form" model="ir.ui.view">
+        <field name="name">library.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="amount_owed" />
+                        <field name="email" />
+                        <field name="address" />
+                    </group>
+                    <notebook>
+                        <page name="current_rentals" string="Current rentals">
+                            <field name="current_rental_ids" readonly="1">
+                                <field name="book_id" />
+                                <field name="rent_date" />
+                                <field name="return_date" />
+                            </field>
+                        </page>
+                        <page name="old_rentals" string="Old Rentals">
+                            <field name="old_rental_ids" readonly="1">
+                                <field name="book_id" />
+                                <field name="rent_date" />
+                                <field name="return_date" />
+                            </field>
+                        </page>
+                        <page name="lost" string="Lost Rentals">
+                            <field name="lost_rental_ids" readonly="1">
+                                <field name="book_id" />
+                                <field name="rent_date" />
+                                <field name="return_date" />
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- action -->
+    <record id="partner_action" model="ir.actions.act_window">
+        <field name="name">Partners</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="partner_action_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="10"/>
+        <field name="view_mode">tree</field>
+        <field name="act_window_id" ref="library.partner_action"/>
+        <field name="view_id" ref="library.partner_view_tree"/>
+    </record>
+
+    <record id="partner_action_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="20"/>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="library.partner_action"/>
+        <field name="view_id" ref="library.partner_view_form"/>
+    </record>
+
+    <!-- <record id="publisher_action" model="ir.actions.act_window">
+        <field name="name">Publishers</field>
+        <field name="res_model">library.publisher</field>
+        <field name="view_mode">tree,form</field>
+    </record> -->
+</odoo>

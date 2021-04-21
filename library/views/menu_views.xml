@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- menuitems -->
+
+    <!-- Root -->
+    <menuitem
+        id="root_menu"
+        name="Library"
+        web_icon="library,static/description/icon.png" />
+
+    <menuitem
+        id="book_menu"
+        name="Books"
+        parent="library.root_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="book_action_menu"
+        name="Books"
+        action="library.book_action"
+        parent="library.book_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="rental_menu"
+        name="Rentals"
+        parent="library.root_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="rental_action_menu"
+        name="Rentals"
+        action="library.rental_action"
+        parent="library.rental_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="partner_menu"
+        name="Partners"
+        sequence="10"
+        parent="library.root_menu"/>
+
+
+    <menuitem
+        id="partner_action_menu"
+        name="Partners"
+        action="library.partner_action"
+        parent="library.partner_menu"
+        sequence="10"/>
+
+    <!-- <menuitem
+        id="publisher_menu"
+        name="Publishers"
+        parent="library.root_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="publisher_action_menu"
+        name="Publishers"
+        action="library.publisher_action"
+        parent="library.publisher_menu"
+        sequence="10"/> -->
+
+    <menuitem
+        id="copy_action_menu"
+        name="Copies"
+        action="copy_action"
+        parent="library.book_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="pricing_action_menu"
+        name="Pricing"
+        action="library.pricing_action"
+        parent="library.book_menu"
+        sequence="10"/>
+</odoo>

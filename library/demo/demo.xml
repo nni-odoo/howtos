@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- Sample Data for customers -->
+  <record id="customer_bob" model="res.partner">
+    <field name="name">Bob</field>
+    <field name="email">bob@gmail.com</field>
+    <field name="address">California</field>
+  </record>
+
+  <record id="customer_ben" model="res.partner">
+    <field name="name">Ben</field>
+    <field name="email">benjamin@gmail.com</field>
+    <field name="address">Bob's house</field>
+  </record>
+
+  <record id="author_martin" model="res.partner">
+    <field name="name">George R. R. Martin</field>
+    <field name="email">george@got.org</field>
+    <field name="address">United States of America</field>
+    <!-- <field name="type_partner">author</field> -->
+    <field name="is_author" eval="True"/>
+  </record>
+
+  <record id="publisher_got" model="res.partner">
+    <field name="name">Bantam Spectra</field>
+    <field name="is_company" eval="True"/>
+    <field name="is_publisher" eval="True" />
+  </record>
+
+  <record id="book_got" model="product.product">
+    <field name="name">Game of Thrones</field>
+    <field name="year">2005</field>
+    <field name="isbn">0-553-10534-7</field>
+    <field name="author_ids" eval="[(4,ref('library.author_martin'))]" />
+    <field name="publisher_id"  ref='publisher_got'/>
+    <field name="is_book">1</field>
+  </record>
+
+  <record id="book_2" model="product.product">
+    <field name="name">Harry Potter</field>
+    <field name="year">2008</field>
+    <field name="isbn">0-553-12345-6</field>
+  </record>
+
+  <record id="copy1" model="library.copy">
+    <field name="book_id"  ref="book_got"/>
+    <field name="reference">GOT-01</field>
+  </record>
+
+  <record id="copy2" model="library.copy">
+    <field name="book_id" ref="book_got" />
+    <field name="reference">GOT-02</field>
+  </record>
+
+  <record id="price_rent" model="library.pricing">
+    <field name="name">Regular Fee</field>
+    <field name="duration">1</field>
+    <field name="price_type">time</field>
+    <field name="price">0.5</field>
+  </record>
+
+  <record id="price_loss" model="library.pricing">
+    <field name="name">Loss Fee</field>
+    <field name="price">30</field>
+    <field name="price_type">one-off</field>
+  </record>
+
+</odoo>

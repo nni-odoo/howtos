@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="action_report_copy"
+            model="library.copy"
+            string="Copy Report"
+            report_type="qweb-html"
+            name="library.report_copy_view"
+            file="library.report_copy"
+        />
+
+        <template id="report_copy_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h1><span t-field="doc.book_id" /> (<span t-field="doc.reference" />)</h1>
+                            <p>Has been read by <span t-field="doc.readers_count"/> people</p>
+                            <h3>Readers:</h3>
+                            <ul>
+                                <t t-foreach="doc.rental_ids" t-as="customer">
+                                    <li><span t-field="customer.customer_id" /></li>
+                                </t>
+                            </ul>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
